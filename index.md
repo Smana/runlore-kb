@@ -21,6 +21,7 @@ conveyed by the surrounding prose.
 - [Flux Kustomization reconciliation failure](kustomization-reconciliation-failure.md)
 - [Karpenter EC2NodeClass not ready — AMI alias not found](karpenter-ec2nodeclass-ami-not-found.md)
 - [HelmRelease stuck terminal-failed — exhausted retries after a transient install timeout](helmrelease-terminal-failed-exhausted-retries.md)
+- [Flux bootstrap — Kustomizations DependencyNotReady until ArtifactGenerator artifacts exist](flux-bootstrap-externalartifact-dependency-cascade.md)
 
 ## Incidents
 
