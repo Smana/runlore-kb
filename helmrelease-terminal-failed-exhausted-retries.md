@@ -1,7 +1,7 @@
 ---
 type: Playbook
 title: HelmRelease stuck terminal-failed — exhausted retries after a transient install timeout
-description: A Flux HelmRelease stays Ready=False ("exceeded maximum retries: cannot install/remediate release") long after the underlying cause cleared, because the install/upgrade failure counters are exhausted and Flux won't retry on its own.
+description: A Flux HelmRelease stays Ready=False long after the underlying cause cleared, because the install/upgrade failure counters are exhausted (exceeded maximum retries) and Flux will not retry on its own.
 resource: helmrelease://*
 tags: [flux, helmrelease, helm, install, timeout, retries, remediation, reset, capacity]
 timestamp: 2026-06-21T00:00:00Z
