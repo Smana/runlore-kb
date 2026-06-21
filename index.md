@@ -18,6 +18,7 @@ conveyed by the surrounding prose.
 ## Playbooks
 
 - [HelmRelease upgrade/install failure](helmrelease-upgrade-failure.md)
+- [Flux Kustomization reconciliation failure](kustomization-reconciliation-failure.md)
 
 ## Incidents
 
