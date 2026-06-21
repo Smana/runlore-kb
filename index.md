@@ -19,6 +19,7 @@ conveyed by the surrounding prose.
 
 - [HelmRelease upgrade/install failure](helmrelease-upgrade-failure.md)
 - [Flux Kustomization reconciliation failure](kustomization-reconciliation-failure.md)
+- [Karpenter EC2NodeClass not ready — AMI alias not found](karpenter-ec2nodeclass-ami-not-found.md)
 
 ## Incidents
 
