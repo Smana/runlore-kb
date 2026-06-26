@@ -1,8 +1,8 @@
 ---
 type: Incident
-title: Application/coder-dev Degraded
+title: Application/<app> Degraded
 description: Argo CD failed to clone the Git repository due to an invalid authentication method, preventing it from fetching the desired state of the application. Although sync operations are reported as "succeeded," the application remains Degraded and OutOfSync, suggesting Argo CD is not deploying the correct or latest configuration.
-resource: argocd/coder-dev
+resource: argocd/<app>
 tags:
     - runlore
     - incident
@@ -17,12 +17,12 @@ fingerprint: 0fb5114fc6816f7f1dea54a48459844c92f6d46bd201c04961d8a5abef8bcf61
 
 ## Symptom
 
-Application/coder-dev Degraded
+Application/<app> Degraded
 
 ## Investigate
 
-- `what_changed` reported "diff error: clone git@github.com:<org>/gitops-repo.git: invalid auth method" for Application/coder-dev.
-- `gitops_resource_status` shows Application/coder-dev as `Ready=False (Degraded)` and `sync: OutOfSync`, despite numerous "Partial sync operation ... succeeded" events.
+- `what_changed` reported "diff error: clone git@github.com:<org>/gitops-repo.git: invalid auth method" for Application/<app>.
+- `gitops_resource_status` shows Application/<app> as `Ready=False (Degraded)` and `sync: OutOfSync`, despite numerous "Partial sync operation ... succeeded" events.
 
 ## Cause
 
