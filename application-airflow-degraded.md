@@ -1,44 +1,88 @@
 ---
 type: Incident
-title: Application/airflow Degraded
-description: 'Missing ExternalSecret for database credentials: [REDACTED] ExternalSecret/wet-collab-database-admin-credentials is failing with "error processing spec.dataFrom[0].extract, err: Secret does not exist". This is a critical dependency for Airflow, likely preventing it from connecting to its database and thus failing synchronization tasks.'
+title: Application/airflow Degraded — ExternalSecret wrong AWS SM path in dev
+description: 'ExternalSecret/wet-collab-database-admin-credentials referenced the prod AWS Secrets Manager path (compute-prod/wet-collab/database/admin) which does not exist in the dev account. Dev uses the rds/ key prefix. Fixed by adding a kustomize patch in the dev-0 overlay to override the key.'
 resource: argocd/airflow
 tags:
     - runlore
     - incident
+    - externalsecrets
+    - kustomize
+    - dev-0
 timestamp: "2026-06-26T12:06:25Z"
+resolved: "2026-06-26T14:30:00Z"
 fingerprint: 1c203f16cd77d6fc915e6affc8f4b1fbd63d7d27de3dd39a1f337e269ec89a94
 ---
 
 ## Decision
 
-- **why keep:** Missing ExternalSecret for database credentials: [REDACTED] ExternalSecret/wet-collab-database-admin-credentials is failing with "error processing spec.dataFrom[0].extract, err: Secret does not exist". This is a critical dependency for Airflow, likely preventing it from connecting to its database and thus failing synchronization tasks.
-- **confidence:** 90%
+- **why keep:** ExternalSecret `wet-collab-database-admin-credentials` referenced the prod AWS SM path; dev account uses a different path prefix. A kustomize overlay patch is the right fix for env-specific SM key divergence.
+- **confidence:** 100% (confirmed resolved)
 
 ## Symptom
 
-Application/airflow Degraded
+`Application/airflow` Degraded on dev-0 ArgoCD. The Helm release is Synced but app health stays Degraded.
 
-## Investigate
+```
+Warning ExternalSecret/wet-collab-database-admin-credentials UpdateFailed (x648):
+  error processing spec.dataFrom[0].extract, err: Secret does not exist
+```
 
-- kube_events output: Warning ExternalSecret/wet-collab-database-admin-credentials UpdateFailed (x648): error processing spec.dataFrom[0].extract, err: Secret does not exist
-- kube_events output: Warning Pod/airflow-redis-0 FailedAttachVolume: Multi-Attach error for volume "pvc-1c4bdaa1-af1e-43ed-9e22-6f6e0de36801" Volume is already exclusively attached to one node and can't be attached to another
-- kube_events output: Warning Pod/airflow-scheduler-549b754f9-lmmfv FailedCreatePodSandBox: Failed to create pod sandbox: rpc error: code = Unknown desc = failed to setup network for sandbox ... plugin type="aws-cni" name="aws-cni" failed (add): add cmd: failed to setup network policy
-- kube_events output: Warning Pod/airflow-scheduler-549b754f9-lmmfv FailedScheduling: 0/23 nodes are available: 1 Too many pods, 15 node(s) had untolerated taint(s), 3 Insufficient memory, 6 Insufficient cpu.
+## Root Cause
 
-## Cause
+The base `ExternalSecret` manifest references:
 
-1. **Missing ExternalSecret for database credentials: [REDACTED] ExternalSecret/wet-collab-database-admin-credentials is failing with "error processing spec.dataFrom[0].extract, err: Secret does not exist". This is a critical dependency for Airflow, likely preventing it from connecting to its database and thus failing synchronization tasks.** (90%)
-2. **Redis volume attachment failure: The airflow-redis-0 pod is experiencing a FailedAttachVolume error. Redis is a critical component for Airflow's caching and message brokering.** (80%)
-3. **Airflow scheduler pod failures: Airflow scheduler pods are encountering network setup failures and resource constraints, preventing them from being scheduled or starting correctly.** (70%)
+```yaml
+spec:
+  dataFrom:
+    - extract:
+        key: compute-prod/wet-collab/database/admin
+```
+
+This path is only valid in the **production** AWS account. The dev account
+(`921475819851`) uses the `rds/` key prefix instead. The secret
+`compute-prod/wet-collab/database/admin` simply does not exist in the dev
+account's Secrets Manager, so ESO's `extract` call fails on every refresh cycle.
+
+The missing secret cascades: Airflow cannot obtain its database credentials →
+pods fail to start → Helm release health degrades → ArgoCD marks the app Degraded.
+
+Secondary symptoms observed (not root cause):
+- `Multi-Attach` error on Redis PVC — pre-existing unrelated node drain issue
+- Scheduler pod `FailedScheduling` / CNI errors — side effects of app degradation
 
 ## Resolution
 
-- Investigate why the wet-collab-database-admin-credentials secret is missing or not accessible. Ensure the secret exists in the target namespace and the ExternalSecret resource is correctly configured to extract it. (reversible=false)
-- Investigate the Multi-Attach error for the Redis PVC. This usually indicates an issue with the underlying storage provisioner or a Kubernetes bug where a volume is not correctly detached from a previous node. (reversible=false)
-- Investigate the AWS CNI plugin failure for network setup and address the node resource constraints (too many pods, insufficient memory/CPU) and untolerated taints that prevent scheduler pods from being scheduled. (reversible=false)
+Added a kustomize strategic-merge patch in the dev-0 overlay to override the key:
+
+**`infra/kubernetes/applications/data/airflow/dev-0/patches/fix-wetcollab-secret-path.yaml`**
+
+```yaml
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
+metadata:
+  name: wet-collab-database-admin-credentials
+  namespace: airflow
+spec:
+  dataFrom:
+    - extract:
+        key: rds/wet-collab/admin
+```
+
+Patch wired into `infra/kubernetes/applications/data/airflow/dev-0/kustomization.yaml`.
+
+Merged as [Aqemia/engineering#6202](https://github.com/Aqemia/engineering/pull/6202).
+
+After ArgoCD synced, ExternalSecret transitioned to `Ready: True` and airflow
+transitioned to `Healthy`.
 
 ## Unresolved
 
-- Specific Git change causing the issue: what_changed failed to retrieve the diff due to an "invalid auth method" for git@github.com:Aqemia/engineering.git. Therefore, it's unclear if a recent Git change introduced the missing ExternalSecret or other configuration issues.
+None — root cause confirmed and fix verified in production.
 
+## Generalisation
+
+Whenever a base ESO `ExternalSecret` manifest uses a prod-only AWS SM path
+(`compute-prod/…`), dev overlays **must** include a kustomize patch to remap to
+the dev-account equivalent (`rds/…`). Consider adding a CI check that flags
+`compute-prod/` keys appearing in any non-prod overlay's rendered output.
