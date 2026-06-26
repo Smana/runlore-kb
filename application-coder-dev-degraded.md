@@ -21,7 +21,7 @@ Application/coder-dev Degraded
 
 ## Investigate
 
-- `what_changed` reported "diff error: clone git@github.com:Aqemia/engineering.git: invalid auth method" for Application/coder-dev.
+- `what_changed` reported "diff error: clone git@github.com:<org>/gitops-repo.git: invalid auth method" for Application/coder-dev.
 - `gitops_resource_status` shows Application/coder-dev as `Ready=False (Degraded)` and `sync: OutOfSync`, despite numerous "Partial sync operation ... succeeded" events.
 
 ## Cause
@@ -30,7 +30,7 @@ Application/coder-dev Degraded
 
 ## Resolution
 
-- Investigate and correct the authentication method for Argo CD to access the Git repository: `git@github.com:Aqemia/engineering.git`. (reversible=false)
+- Investigate and correct the authentication method for Argo CD to access the Git repository: `git@github.com:<org>/gitops-repo.git`. (reversible=false)
 
 ## Unresolved
 
