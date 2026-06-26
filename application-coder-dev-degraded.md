@@ -1,8 +1,8 @@
 ---
 type: Incident
-title: Application/coder-dev Degraded
-description: ArgoCD Application "coder-dev" is degraded due to an invalid authentication method for accessing the Git repository.
-resource: argocd/coder-dev
+title: Application/<app> Degraded
+description: ArgoCD Application "<app>" is degraded due to an invalid authentication method for accessing the Git repository.
+resource: argocd/<app>
 tags:
     - runlore
     - incident
@@ -12,12 +12,12 @@ fingerprint: 2d56d2fd5b9f5409ef3bbb5e4b208338f90df2cb4520691adbd0abf1225683b7
 
 ## Decision
 
-- **why keep:** ArgoCD Application "coder-dev" is degraded due to an invalid authentication method for accessing the Git repository.
+- **why keep:** ArgoCD Application "<app>" is degraded due to an invalid authentication method for accessing the Git repository.
 - **confidence:** 90%
 
 ## Symptom
 
-Application/coder-dev Degraded
+Application/<app> Degraded
 
 ## Investigate
 
@@ -26,7 +26,7 @@ Application/coder-dev Degraded
 
 ## Cause
 
-1. **ArgoCD Application "coder-dev" is degraded due to an invalid authentication method for accessing the Git repository.** (90%)
+1. **ArgoCD Application "<app>" is degraded due to an invalid authentication method for accessing the Git repository.** (90%)
 
 ## Resolution
 
