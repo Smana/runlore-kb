@@ -1,14 +1,13 @@
 ---
 type: Incident
 title: Application/airflow Degraded — ExternalSecret wrong AWS SM path in dev
-description: 'ExternalSecret/wet-collab-database-admin-credentials referenced the prod AWS Secrets Manager path (compute-prod/wet-collab/database/admin) which does not exist in the dev account. Dev uses the rds/ key prefix. Fixed by adding a kustomize patch in the dev-0 overlay to override the key.'
+description: 'ExternalSecret/wet-collab-database-admin-credentials referenced a prod-only AWS Secrets Manager key that does not exist in the dev account. Fixed by adding a kustomize patch in the dev overlay to override the key to the dev-account equivalent.'
 resource: argocd/airflow
 tags:
     - runlore
     - incident
     - externalsecrets
     - kustomize
-    - dev-0
 timestamp: "2026-06-26T12:06:25Z"
 resolved: "2026-06-26T14:30:00Z"
 fingerprint: 1c203f16cd77d6fc915e6affc8f4b1fbd63d7d27de3dd39a1f337e269ec89a94
@@ -30,18 +29,17 @@ Warning ExternalSecret/wet-collab-database-admin-credentials UpdateFailed (x648)
 
 ## Root Cause
 
-The base `ExternalSecret` manifest references:
+The base `ExternalSecret` manifest references a prod-only AWS Secrets Manager key:
 
 ```yaml
 spec:
   dataFrom:
     - extract:
-        key: compute-prod/wet-collab/database/admin
+        key: <prod-prefix>/wet-collab/database/admin
 ```
 
 This path is only valid in the **production** AWS account. The dev account
-(`921475819851`) uses the `rds/` key prefix instead. The secret
-`compute-prod/wet-collab/database/admin` simply does not exist in the dev
+uses a different key prefix. The secret simply does not exist in the dev
 account's Secrets Manager, so ESO's `extract` call fails on every refresh cycle.
 
 The missing secret cascades: Airflow cannot obtain its database credentials →
@@ -55,7 +53,7 @@ Secondary symptoms observed (not root cause):
 
 Added a kustomize strategic-merge patch in the dev-0 overlay to override the key:
 
-**`infra/kubernetes/applications/data/airflow/dev-0/patches/fix-wetcollab-secret-path.yaml`**
+Add a kustomize strategic-merge patch in the environment-specific overlay to override the key to the dev-account equivalent path:
 
 ```yaml
 apiVersion: external-secrets.io/v1
@@ -66,12 +64,10 @@ metadata:
 spec:
   dataFrom:
     - extract:
-        key: rds/wet-collab/admin
+        key: <dev-prefix>/wet-collab/admin
 ```
 
-Patch wired into `infra/kubernetes/applications/data/airflow/dev-0/kustomization.yaml`.
-
-Merged as [Aqemia/engineering#6202](https://github.com/Aqemia/engineering/pull/6202).
+Patch wired into the dev overlay `kustomization.yaml`.
 
 After ArgoCD synced, ExternalSecret transitioned to `Ready: True` and airflow
 transitioned to `Healthy`.
@@ -82,7 +78,7 @@ None — root cause confirmed and fix verified in production.
 
 ## Generalisation
 
-Whenever a base ESO `ExternalSecret` manifest uses a prod-only AWS SM path
-(`compute-prod/…`), dev overlays **must** include a kustomize patch to remap to
-the dev-account equivalent (`rds/…`). Consider adding a CI check that flags
-`compute-prod/` keys appearing in any non-prod overlay's rendered output.
+Whenever a base ESO `ExternalSecret` manifest uses a prod-only AWS SM key prefix,
+environment-specific overlays **must** include a kustomize patch to remap to the
+correct path for that environment. Consider adding a CI check that flags prod-only
+key prefixes appearing in any non-prod overlay's rendered output.
