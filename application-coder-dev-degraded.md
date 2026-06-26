@@ -1,8 +1,8 @@
 ---
 type: Incident
-title: Application/coder-dev Degraded
-description: ArgoCD Application coder-dev is degraded because ArgoCD is unable to clone the Git repository due to an invalid authentication method.
-resource: argocd/coder-dev
+title: Application/<app> Degraded
+description: ArgoCD Application <app> is degraded because ArgoCD is unable to clone the Git repository due to an invalid authentication method.
+resource: argocd/<app>
 tags:
     - runlore
     - incident
@@ -12,26 +12,26 @@ fingerprint: f25f80ebd65d9a91fa5faf4a46478e3df344503b79dd8d5c8b7ad5abd0065d2a
 
 ## Decision
 
-- **why keep:** ArgoCD Application coder-dev is degraded because ArgoCD is unable to clone the Git repository due to an invalid authentication method.
+- **why keep:** ArgoCD Application <app> is degraded because ArgoCD is unable to clone the Git repository due to an invalid authentication method.
 - **confidence:** 90%
 
 ## Symptom
 
-Application/coder-dev Degraded
+Application/<app> Degraded
 
 ## Investigate
 
 - `what_changed` reported "clone git@github.com:<org>/gitops-repo.git: invalid auth method".
-- `gitops_resource_status` shows Application argocd/coder-dev is `Ready=False (Degraded)` and `sync: OutOfSync`, indicating a failure to reconcile with the source repository.
-- Frequent `OperationStarted` and `OperationCompleted` events for `coder-dev` suggest continuous attempts to sync, but the `OutOfSync` status indicates these attempts are not leading to a successful reconciliation with the intended state from Git.
+- `gitops_resource_status` shows Application argocd/<app> is `Ready=False (Degraded)` and `sync: OutOfSync`, indicating a failure to reconcile with the source repository.
+- Frequent `OperationStarted` and `OperationCompleted` events for `<app>` suggest continuous attempts to sync, but the `OutOfSync` status indicates these attempts are not leading to a successful reconciliation with the intended state from Git.
 
 ## Cause
 
-1. **ArgoCD Application coder-dev is degraded because ArgoCD is unable to clone the Git repository due to an invalid authentication method.** (90%)
+1. **ArgoCD Application <app> is degraded because ArgoCD is unable to clone the Git repository due to an invalid authentication method.** (90%)
 
 ## Resolution
 
-- Investigate and correct the Git authentication method (e.g., SSH key or token) used by ArgoCD for the `git@github.com:<org>/gitops-repo.git` repository, specifically for the `coder-dev` application. (reversible=true)
+- Investigate and correct the Git authentication method (e.g., SSH key or token) used by ArgoCD for the `git@github.com:<org>/gitops-repo.git` repository, specifically for the `<app>` application. (reversible=true)
 
 ## Unresolved
 
