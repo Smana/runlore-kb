@@ -37,5 +37,5 @@ Application/coder-dev Degraded
 ## Unresolved
 
 - The exact reason for the application container's failure (e.g., specific error message from application logs) because `query_logs` tool was unavailable.
-- The root cause of the "diff error: clone git@github.com:Aqemia/engineering.git: invalid auth method" reported by `what_changed`, although it appears unrelated to the current symptoms given successful syncs.
+- The root cause of the "diff error: clone git@github.com:<org>/gitops-repo.git: invalid auth method" reported by `what_changed`, although it appears unrelated to the current symptoms given successful syncs.
 
