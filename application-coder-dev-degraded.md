@@ -1,8 +1,8 @@
 ---
 type: Incident
-title: Application/coder-dev Degraded
+title: Application/<app> Degraded
 description: ArgoCD is unable to authenticate to the Git repository, preventing it from syncing the application state correctly and leading to a Degraded status.
-resource: argocd/coder-dev
+resource: argocd/<app>
 tags:
     - runlore
     - incident
@@ -17,13 +17,13 @@ fingerprint: cd0397ae2af59d828009d7e521cc04c81896d1f8c9395e66cc4e07ad66f4adc4
 
 ## Symptom
 
-Application/coder-dev Degraded
+Application/<app> Degraded
 
 ## Investigate
 
-- what_changed output for argocd/coder-dev: "diff error: clone git@github.com:<org>/gitops-repo.git: invalid auth method"
-- gitops_resource_status for argocd/coder-dev: Application is Ready=False (Degraded) and sync: OutOfSync
-- gitops_resource_status for argocd/coder-dev: repoURL: git@github.com:<org>/gitops-repo.git
+- what_changed output for argocd/<app>: "diff error: clone git@github.com:<org>/gitops-repo.git: invalid auth method"
+- gitops_resource_status for argocd/<app>: Application is Ready=False (Degraded) and sync: OutOfSync
+- gitops_resource_status for argocd/<app>: repoURL: git@github.com:<org>/gitops-repo.git
 
 ## Cause
 
