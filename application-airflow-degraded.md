@@ -1,7 +1,7 @@
 ---
 type: Incident
 title: Application/airflow Degraded — ExternalSecret wrong AWS SM path in dev
-description: 'ExternalSecret/wet-collab-database-admin-credentials referenced a prod-only AWS Secrets Manager key that does not exist in the dev account. Fixed by adding a kustomize patch in the dev overlay to override the key to the dev-account equivalent.'
+description: 'ExternalSecret/<service>-database-admin-credentials referenced a prod-only AWS Secrets Manager key that does not exist in the dev account. Fixed by adding a kustomize patch in the dev overlay to override the key to the dev-account equivalent.'
 resource: argocd/airflow
 tags:
     - runlore
@@ -15,7 +15,7 @@ fingerprint: 1c203f16cd77d6fc915e6affc8f4b1fbd63d7d27de3dd39a1f337e269ec89a94
 
 ## Decision
 
-- **why keep:** ExternalSecret `wet-collab-database-admin-credentials` referenced the prod AWS SM path; dev account uses a different path prefix. A kustomize overlay patch is the right fix for env-specific SM key divergence.
+- **why keep:** ExternalSecret `<service>-database-admin-credentials` referenced the prod AWS SM path; dev account uses a different path prefix. A kustomize overlay patch is the right fix for env-specific SM key divergence.
 - **confidence:** 100% (confirmed resolved)
 
 ## Symptom
@@ -23,7 +23,7 @@ fingerprint: 1c203f16cd77d6fc915e6affc8f4b1fbd63d7d27de3dd39a1f337e269ec89a94
 `Application/airflow` Degraded on dev-0 ArgoCD. The Helm release is Synced but app health stays Degraded.
 
 ```
-Warning ExternalSecret/wet-collab-database-admin-credentials UpdateFailed (x648):
+Warning ExternalSecret/<service>-database-admin-credentials UpdateFailed (x648):
   error processing spec.dataFrom[0].extract, err: Secret does not exist
 ```
 
@@ -35,7 +35,7 @@ The base `ExternalSecret` manifest references a prod-only AWS Secrets Manager ke
 spec:
   dataFrom:
     - extract:
-        key: <prod-prefix>/wet-collab/database/admin
+        key: <prod-prefix>/<service>/database/admin
 ```
 
 This path is only valid in the **production** AWS account. The dev account
@@ -59,12 +59,12 @@ Add a kustomize strategic-merge patch in the environment-specific overlay to ove
 apiVersion: external-secrets.io/v1
 kind: ExternalSecret
 metadata:
-  name: wet-collab-database-admin-credentials
+  name: <service>-database-admin-credentials
   namespace: airflow
 spec:
   dataFrom:
     - extract:
-        key: <dev-prefix>/wet-collab/admin
+        key: <dev-prefix>/<service>/admin
 ```
 
 Patch wired into the dev overlay `kustomization.yaml`.
