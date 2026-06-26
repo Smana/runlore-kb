@@ -21,9 +21,9 @@ Application/coder-dev Degraded
 
 ## Investigate
 
-- what_changed output for argocd/coder-dev: "diff error: clone git@github.com:Aqemia/engineering.git: invalid auth method"
+- what_changed output for argocd/coder-dev: "diff error: clone git@github.com:<org>/gitops-repo.git: invalid auth method"
 - gitops_resource_status for argocd/coder-dev: Application is Ready=False (Degraded) and sync: OutOfSync
-- gitops_resource_status for argocd/coder-dev: repoURL: git@github.com:Aqemia/engineering.git
+- gitops_resource_status for argocd/coder-dev: repoURL: git@github.com:<org>/gitops-repo.git
 
 ## Cause
 
@@ -31,7 +31,7 @@ Application/coder-dev Degraded
 
 ## Resolution
 
-- Investigate and correct the authentication method ArgoCD uses to access git@github.com:Aqemia/engineering.git. This likely involves checking the SSH key or credentials configured for the Git repository within ArgoCD. (reversible=true)
+- Investigate and correct the authentication method ArgoCD uses to access git@github.com:<org>/gitops-repo.git. This likely involves checking the SSH key or credentials configured for the Git repository within ArgoCD. (reversible=true)
 
 ## Unresolved
 
