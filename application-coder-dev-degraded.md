@@ -1,7 +1,7 @@
 ---
 type: Incident
 title: Application/coder-dev Degraded
-description: Argo CD is unable to authenticate to the Git repository "git@github.com:Aqemia/engineering.git", leading to an OutOfSync application and unready pods.
+description: Argo CD is unable to authenticate to the Git repository "git@github.com:<org>/gitops-repo.git", leading to an OutOfSync application and unready pods.
 resource: argocd/coder-dev
 tags:
     - runlore
@@ -12,7 +12,7 @@ fingerprint: debb29b9bde400b3a732c8e13ce0cfd4b044af6cdedab690d6a774bbee2e75a7
 
 ## Decision
 
-- **why keep:** Argo CD is unable to authenticate to the Git repository "git@github.com:Aqemia/engineering.git", leading to an OutOfSync application and unready pods.
+- **why keep:** Argo CD is unable to authenticate to the Git repository "git@github.com:<org>/gitops-repo.git", leading to an OutOfSync application and unready pods.
 - **confidence:** 90%
 
 ## Symptom
@@ -28,11 +28,11 @@ Application/coder-dev Degraded
 
 ## Cause
 
-1. **Argo CD is unable to authenticate to the Git repository "git@github.com:Aqemia/engineering.git", leading to an OutOfSync application and unready pods.** (90%)
+1. **Argo CD is unable to authenticate to the Git repository "git@github.com:<org>/gitops-repo.git", leading to an OutOfSync application and unready pods.** (90%)
 
 ## Resolution
 
-- Investigate and correct the Git authentication method (e.g., SSH key or token) used by Argo CD for accessing the "Aqemia/engineering.git" repository. (reversible=true)
+- Investigate and correct the Git authentication method (e.g., SSH key or token) used by Argo CD for accessing the "<org>/gitops-repo.git" repository. (reversible=true)
 
 ## Unresolved
 
