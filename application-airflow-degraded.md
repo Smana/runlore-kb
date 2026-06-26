@@ -21,7 +21,7 @@ Application/airflow Degraded
 
 ## Investigate
 
-- what_changed for argocd/airflow showed 'diff error: clone git@github.com:Aqemia/engineering.git: invalid auth method'.
+- what_changed for argocd/airflow showed 'diff error: clone git@github.com:<org>/gitops-repo.git: invalid auth method'.
 - gitops_resource_status for argocd/airflow showed Ready=False (Degraded SyncFailed) with message 'one or more synchronization tasks completed unsuccessfully (retried 5 times).'
 - All ArgoCD core pods are running and healthy.
 
@@ -31,7 +31,7 @@ Application/airflow Degraded
 
 ## Resolution
 
-- Investigate and correct the Git authentication method configured in ArgoCD for the 'git@github.com:Aqemia/engineering.git' repository. This might involve updating an SSH key or token. (reversible=false)
+- Investigate and correct the Git authentication method configured in ArgoCD for the 'git@github.com:<org>/gitops-repo.git' repository. This might involve updating an SSH key or token. (reversible=false)
 
 ## Unresolved
 
