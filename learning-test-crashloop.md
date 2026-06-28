@@ -21,7 +21,7 @@ fingerprint: seed0learningtest0causex0missingsecretkey00000000000000000000000000
 
 `learning-test` in `sre-lab` is in CrashLoopBackOff; pods repeatedly exit on startup.
 
-## Root Cause
+## Cause
 
 The deployment is missing the required `SECRET_KEY` environment variable. On boot the
 process validates its configuration, finds `SECRET_KEY` unset, logs a fatal
