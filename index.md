@@ -26,3 +26,4 @@ conveyed by the surrounding prose.
 ## Incidents
 
 _Learned entries land here as the agent investigates novel, human-sharpened incidents._
+- [Bad image tag '6.7.1-hotfix.2' causes ImagePullBackOff in checkout-api deployment](incidents/bad-image-tag-6-7-1-hotfix-2-causes-imagepullbackoff-in-checkout-api-deployment-1baf4893.md) — The checkout-api deployment is failing to pull an image due to an invalid image tag.
