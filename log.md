@@ -6,3 +6,7 @@ description: Chronological record of catalog changes (one line per ingest/curati
 ---
 
 # Change log
+## 2026-07-03
+
+* **Creation**: Added [Kustomization runlore-demo failing health check due to missing secret for payment-api Deployment](incidents/kustomization-runlore-demo-failing-health-check-due-to-missing-secret-for-payment-api-deployment-1baf4893.md).
+
