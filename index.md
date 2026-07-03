@@ -26,3 +26,4 @@ conveyed by the surrounding prose.
 ## Incidents
 
 _Learned entries land here as the agent investigates novel, human-sharpened incidents._
+- [Kustomization runlore-demo failing health check due to missing secret for payment-api Deployment](incidents/kustomization-runlore-demo-failing-health-check-due-to-missing-secret-for-payment-api-deployment-1baf4893.md) — A recent change to the runlore-demo application modified the ExternalSecret/payment-api-db to reference a source secret that does not exist. This prevents the application's required secret (payment-api-db) from being created, causing the payment-api pods to fail with CreateContainerConfigError.
