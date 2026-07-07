@@ -6,3 +6,7 @@ description: Chronological record of catalog changes (one line per ingest/curati
 ---
 
 # Change log
+## 2026-07-07
+
+* **Creation**: Added [Kustomization/observability-victoria-traces HealthCheckFailed](incidents/kustomization-observability-victoria-traces-healthcheckfailed-9931aff0.md).
+
