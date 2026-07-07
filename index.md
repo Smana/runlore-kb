@@ -26,3 +26,4 @@ conveyed by the surrounding prose.
 ## Incidents
 
 _Learned entries land here as the agent investigates novel, human-sharpened incidents._
+- [Kustomization reconciliation failing due to unhealthy cert-manager webhook, caused by Crossplane IAM permission loss](incidents/kustomization-reconciliation-failing-due-to-unhealthy-cert-manager-webhook-caused-by-crossplane-iam-permission-loss-a63d8db4.md) — Crossplane's AWS IAM permissions were revoked, causing a cascading failure of managed infrastructure in the 'security' namespace. This led to multiple critical admission webhooks (including cert-manager's) becoming unhealthy and unresponsive, which in turn blocked the 'zitadel' Kustomization from being applied.
