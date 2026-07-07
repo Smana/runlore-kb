@@ -26,3 +26,4 @@ conveyed by the surrounding prose.
 ## Incidents
 
 _Learned entries land here as the agent investigates novel, human-sharpened incidents._
+- [HarborRegistryDown alert is stale — Harbor registry is currently healthy and running](incidents/harborregistrydown-alert-is-stale-harbor-registry-is-currently-healthy-and-running-a9a71f9b.md) — STALE/FALSE ALERT: The HarborRegistryDown alert fired at 09:20Z, but Harbor recovered from a transient cluster-wide capacity crisis over 2 hours earlier (~07:04Z) and is currently fully healthy. The alert's claimed root cause (Crossplane AccessKey hitting AWS IAM AccessKeysPerUser quota) is NOT supported by live evidence.
