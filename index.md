@@ -26,3 +26,4 @@ conveyed by the surrounding prose.
 ## Incidents
 
 _Learned entries land here as the agent investigates novel, human-sharpened incidents._
+- [vllm-semantic-router is down after being unintentionally deleted by a new, suspended Flux Kustomization](incidents/vllm-semantic-router-is-down-after-being-unintentionally-deleted-by-a-new-suspended-flux-kustomization-a287720a.md) — The vllm-semantic-router workload was unintentionally deleted by a new, suspended Flux 'umbrella' Kustomization.
