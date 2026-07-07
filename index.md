@@ -26,3 +26,4 @@ conveyed by the surrounding prose.
 ## Incidents
 
 _Learned entries land here as the agent investigates novel, human-sharpened incidents._
+- [Kustomization/observability-victoria-traces HealthCheckFailed](incidents/kustomization-observability-victoria-traces-healthcheckfailed-9931aff0.md) — A transient issue with the `ArtifactGenerator/flux-system/monorepo-split` resource caused a cascading failure, leading to the `Kustomization/flux-system/observability-victoria-traces` failing its health check. The underlying issue with the `ArtifactGenerator` appears to have resolved, as evidenced by the downstream `HelmRelease/observability/victoria-traces` now being in a `Ready=True` state. The Kustomization, however, remains in a failed state and requires a manual reconciliation to clear the error.
