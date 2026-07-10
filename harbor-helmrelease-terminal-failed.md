@@ -2,6 +2,7 @@
 type: Incident
 title: Harbor HelmRelease stuck InstallFailed after a cluster capacity shortage
 description: Harbor never finished installing; its HelmRelease is terminal-failed (timeout waiting for Deployments/StatefulSets) because the cluster could not schedule the pods in time, and Flux exhausted its install retries.
+resource: tooling/harbor
 tags:
     - runlore
     - incident
@@ -12,13 +13,13 @@ tags:
     - karpenter
 ---
 
-## Summary
+## Symptom
 
 The `tooling/harbor` HelmRelease is `Ready=False / InstallFailed` and never recovers on its own. This
 is an instance of [[helmrelease-terminal-failed-exhausted-retries]], triggered by the cluster-wide
 capacity shortage in [[karpenter-ec2nodeclass-ami-not-found]] — not by any application change.
 
-## Root cause
+## Cause
 
 Confidence: high (verified against live state).
 

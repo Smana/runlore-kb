@@ -24,19 +24,29 @@ investigations, and **writes** to (via reviewed PRs) as it learns.
 type: Playbook              # Playbook | Incident | Postmortem | …
 title: HelmRelease upgrade failure
 description: A Helm chart bump leaves the release Ready=False.
-resource: helmrelease://*   # optional: what this entry is about
+resource: helmrelease://*   # REQUIRED for Incident (namespace/name or scheme://…); optional for Playbook/Concept
 tags: [flux, helmrelease, upgrade]
 ---
-# Symptom
+## Symptom
 …
-# Investigate
+## Investigate
 …
-# Resolution
+## Resolution
 …
 ```
 
 Unknown frontmatter keys (e.g. `okf_version`) are ignored; the body is everything after the
 frontmatter.
+
+### Rules the CI enforces
+
+Every entry is checked on each PR by `lore validate-kb` (see `.github/workflows/validate-kb.yml`),
+which runs RunLore's own validator so the rules never drift from what the agent enforces at index
+time. `type`, `title` and `description` are always required. An **`Incident`** entry additionally
+**must** carry a `resource:` (it is anchored to a concrete affected object, so recall can match it)
+and the body sections `## Symptom`, `## Cause`, `## Resolution` (an `## Investigate` evidence
+section is recommended). `Playbook`/`Concept` entries are abstract knowledge and stay free-form. A
+structural error fails the merge; `index.md`, `log.md` and this `README.md` are skipped.
 
 ## How RunLore uses it
 

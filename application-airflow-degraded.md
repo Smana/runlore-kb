@@ -27,7 +27,7 @@ Warning ExternalSecret/<service>-database-admin-credentials UpdateFailed (x648):
   error processing spec.dataFrom[0].extract, err: Secret does not exist
 ```
 
-## Root Cause
+## Cause
 
 The base `ExternalSecret` manifest references a prod-only AWS Secrets Manager key:
 
