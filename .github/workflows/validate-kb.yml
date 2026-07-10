@@ -1,0 +1,31 @@
+name: Validate KB
+
+# Merge gate for the knowledge catalog. Every entry is checked by RunLore's OWN
+# validator (`lore validate-kb`) so the rules never drift from what the agent
+# enforces when it indexes the catalog at runtime: an Incident must carry a
+# `resource:` and the `## Symptom` / `## Cause` / `## Resolution` sections, etc.
+# A structural error fails the PR; `index.md`, `log.md` and `README.md` are skipped.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6.5.0
+        with:
+          # Pinned to RunLore's toolchain so `go install` builds without a
+          # toolchain download (setup-go pins GOTOOLCHAIN=local).
+          go-version: '1.26.5'
+      - name: Install lore (RunLore's KB validator)
+        # Pinned to a runlore commit that ships `validate-kb` + the README-skip fix.
+        # Bump to `@v0.8.0` once that release is cut.
+        run: go install github.com/Smana/runlore/cmd/lore@43f225a0bdb159238668e08ce074f4d5f2aef237
+      - name: Validate catalog entries
+        run: lore validate-kb --format github .
