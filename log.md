@@ -1,11 +1,12 @@
----                                               
-okf_version: "0.1"                                                            
+---
+okf_version: "0.1"
 type: Log
-title: Change log                                                                                                                                                                                                
+title: Change log
 description: Chronological record of catalog changes (one line per ingest/curation).
 ---
 
 # Change log
+
 ## 2026-07-07
 
 * **Creation**: Added [RunloreHistoryValidation — synthetic validation alert, no real incident (namespace/workload do not exist)](incidents/runlorehistoryvalidation-synthetic-validation-alert-no-real-incident-namespace-workload-do-not-exist-d383a759.md).
@@ -16,3 +17,8 @@ description: Chronological record of catalog changes (one line per ingest/curati
 * **Fix**: [Harbor HelmRelease stuck InstallFailed](harbor-helmrelease-terminal-failed.md) and [Application/airflow Degraded](application-airflow-degraded.md) now carry the required `resource:` and `## Symptom` / `## Cause` sections, so the indexer stops dropping them.
 * **CI**: Added `.github/workflows/validate-kb.yml` — every PR is now checked by RunLore's own `lore validate-kb`.
 
+## 2026-07-16
+
+* **Creation**: Added [EKS managed control plane — KubeAPIDown/KubeControllerManagerDown/KubeSchedulerDown are false positives](eks-control-plane-down-alerts-false-positive.md).
+* **Creation**: Added [LLMPlatformSemanticRouterDown on an LLM-free cluster — the opt-in LLM platform is suspended](llm-semantic-router-down-platform-suspended.md).
+* **Creation**: Added [Crossplane KMS Alias stuck Synced=False — kms:CreateAlias denied by an unsatisfiable aws:RequestTag condition](crossplane-kms-createalias-requesttag-accessdenied.md).
