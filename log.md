@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-07-18
+
+* **Creation**: Added [Harbor HelmRelease UpgradeFailed: IAM Access Key quota blocking harbor-registry credentials (not a capacity issue)](incidents/harbor-helmrelease-upgradefailed-iam-access-key-quota-blocking-harbor-registry-credentials-not-a-capacity-issue-c5230eb8.md).
+
 ## 2026-07-07
 
 * **Creation**: Added [RunloreHistoryValidation — synthetic validation alert, no real incident (namespace/workload do not exist)](incidents/runlorehistoryvalidation-synthetic-validation-alert-no-real-incident-namespace-workload-do-not-exist-d383a759.md).
