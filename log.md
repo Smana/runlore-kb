@@ -17,6 +17,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 * **Fix**: [Harbor HelmRelease stuck InstallFailed](harbor-helmrelease-terminal-failed.md) and [Application/airflow Degraded](application-airflow-degraded.md) now carry the required `resource:` and `## Symptom` / `## Cause` sections, so the indexer stops dropping them.
 * **CI**: Added `.github/workflows/validate-kb.yml` — every PR is now checked by RunLore's own `lore validate-kb`.
 
+## 2026-07-13
+
+* **Creation**: Added [envoy-gateway HelmRelease terminal-failed: chart v1.8.2 RBAC gap blocks InferencePool watch → healthz fails →…](incidents/envoy-gateway-helmrelease-terminal-failed-chart-v1-8-2-rbac-gap-blocks-inferencepool-watch-healthz-fails-c98cf34b.md).
+
 ## 2026-07-16
 
 * **Creation**: Added [EKS managed control plane — KubeAPIDown/KubeControllerManagerDown/KubeSchedulerDown are false positives](eks-control-plane-down-alerts-false-positive.md).
