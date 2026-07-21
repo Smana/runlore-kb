@@ -24,8 +24,8 @@ jobs:
           # toolchain download (setup-go pins GOTOOLCHAIN=local).
           go-version: '1.26.5'
       - name: Install lore (RunLore's KB validator)
-        # Pinned to a runlore commit that ships `validate-kb` + the README-skip fix.
-        # Bump to `@v0.8.0` once that release is cut.
-        run: go install github.com/Smana/runlore/cmd/lore@43f225a0bdb159238668e08ce074f4d5f2aef237
+        # Pinned to a released validator; keep in lockstep with the RunLore
+        # release the platform runs so the gate matches what the agent enforces.
+        run: go install github.com/Smana/runlore/cmd/lore@v0.10.0
       - name: Validate catalog entries
         run: lore validate-kb --format github .
