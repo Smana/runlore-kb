@@ -22,3 +22,7 @@ description: Chronological record of catalog changes (one line per ingest/curati
 * **Creation**: Added [EKS managed control plane — KubeAPIDown/KubeControllerManagerDown/KubeSchedulerDown are false positives](eks-control-plane-down-alerts-false-positive.md).
 * **Creation**: Added [LLMPlatformSemanticRouterDown on an LLM-free cluster — the opt-in LLM platform is suspended](llm-semantic-router-down-platform-suspended.md).
 * **Creation**: Added [Crossplane KMS Alias stuck Synced=False — kms:CreateAlias denied by an unsatisfiable aws:RequestTag condition](crossplane-kms-createalias-requesttag-accessdenied.md).
+
+## 2026-07-21
+
+* **Fix**: [Harbor Registry Down due to IAM Access Key Quota Limit](harbor-registry-down-due-to-iam-access-key-quota-limit.md) gains `alert_resource: tooling/harbor` (runlore#318) — the cause recurred on the rebuilt cluster but fired as a HelmRelease-scoped trigger, which the pod-scoped `resource:` could not instant-recall.

@@ -3,6 +3,7 @@ type: Incident
 title: Harbor Registry Down due to IAM Access Key Quota Limit
 description: 'The Crossplane resource `AccessKey/xplane-harbor` has hit an AWS IAM quota limit (`AccessKeysPerUser: 2`), preventing it from creating the credentials required by the Harbor registry.'
 resource: tooling/harbor-registry
+alert_resource: tooling/harbor
 tags:
     - runlore
     - incident
