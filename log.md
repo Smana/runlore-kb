@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-07-24
+
+* **Creation**: Added [app-wizard new pods stuck NotReady: inverted /readyz readiness gate returns 503 when schema pipeline IS initialized](incidents/app-wizard-new-pods-stuck-notready-inverted-readyz-readiness-gate-returns-503-when-schema-pipeline-is-initialized-1932a586.md).
+
 ## 2026-07-07
 
 * **Creation**: Added [RunloreHistoryValidation — synthetic validation alert, no real incident (namespace/workload do not exist)](incidents/runlorehistoryvalidation-synthetic-validation-alert-no-real-incident-namespace-workload-do-not-exist-d383a759.md).
