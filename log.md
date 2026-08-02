@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-08-02
+
+* **Creation**: Added [Kustomization/flux-system/eval-victim-broken ArtifactFailed — invalid spec.path references non-existent directory…](incidents/kustomization-flux-system-eval-victim-broken-artifactfailed-invalid-spec-path-references-non-existent-directory-0604fa65.md).
+
 ## 2026-07-07
 
 * **Creation**: Added [RunloreHistoryValidation — synthetic validation alert, no real incident (namespace/workload do not exist)](incidents/runlorehistoryvalidation-synthetic-validation-alert-no-real-incident-namespace-workload-do-not-exist-d383a759.md).
