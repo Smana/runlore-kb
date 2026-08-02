@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-08-02
+
+* **Creation**: Added [HelmRelease victoria-logs InstallFailed: Cilium IPAM exhaustion on node ip-10-0-3-147 blocks DaemonSet pod + Flux…](incidents/helmrelease-victoria-logs-installfailed-cilium-ipam-exhaustion-on-node-ip-10-0-3-147-blocks-daemonset-pod-flux-790c3116.md).
+
 ## 2026-07-07
 
 * **Creation**: Added [RunloreHistoryValidation — synthetic validation alert, no real incident (namespace/workload do not exist)](incidents/runlorehistoryvalidation-synthetic-validation-alert-no-real-incident-namespace-workload-do-not-exist-d383a759.md).
