@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-08-02
+
+* **Creation**: Added [Harbor HelmRelease InstallFailed: Crossplane AccessKey blocked by IAM AccessKeysPerUser quota (2/2)](incidents/harbor-helmrelease-installfailed-crossplane-accesskey-blocked-by-iam-accesskeysperuser-quota-2-2-d6c69909.md).
+
 ## 2026-07-07
 
 * **Creation**: Added [RunloreHistoryValidation — synthetic validation alert, no real incident (namespace/workload do not exist)](incidents/runlorehistoryvalidation-synthetic-validation-alert-no-real-incident-namespace-workload-do-not-exist-d383a759.md).
