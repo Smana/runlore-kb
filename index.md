@@ -25,6 +25,7 @@ conveyed by the surrounding prose.
 - [EKS managed control plane — KubeAPIDown/KubeControllerManagerDown/KubeSchedulerDown are false positives](eks-control-plane-down-alerts-false-positive.md)
 - [LLMPlatformSemanticRouterDown on an LLM-free cluster — the opt-in LLM platform is suspended](llm-semantic-router-down-platform-suspended.md)
 - [Crossplane KMS Alias stuck Synced=False — kms:CreateAlias denied by an unsatisfiable aws:RequestTag condition](crossplane-kms-createalias-requesttag-accessdenied.md)
+- [Pod crashloops with AWS "Access Denied" but the pod spec has no AWS_CONTAINER_* env — Pod Identity was never injected](eks-pod-identity-credentials-never-injected.md) — the pod was admitted before its PodIdentityAssociation was usable, so the webhook injected nothing; injection happens at admission, so no restart recovers it. Recreate the pod. Recurs on every cluster rebuild.
 
 ## Incidents
 
