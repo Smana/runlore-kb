@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-08-03
+
+* **Creation**: Added [ImageGalleryUnavailable: AWS Secrets Manager secret manually deleted, breaking ExternalSecret → K8s Secret → pod…](incidents/imagegalleryunavailable-aws-secrets-manager-secret-manually-deleted-breaking-externalsecret-k8s-secret-pod-afe1c077.md).
+
 ## 2026-07-07
 
 * **Creation**: Added [RunloreHistoryValidation — synthetic validation alert, no real incident (namespace/workload do not exist)](incidents/runlorehistoryvalidation-synthetic-validation-alert-no-real-incident-namespace-workload-do-not-exist-d383a759.md).
