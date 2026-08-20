@@ -9,6 +9,8 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 ## 2026-08-20
 
+* **Creation**: Added [Operator note: the policy was added by the platform team during a security review; the…](concepts/operator-note-the-policy-was-added-by-the-platform-team-during-a-security-review-the-1787234327.md).
+
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
 
 ## 2026-08-03
