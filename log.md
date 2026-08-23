@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-08-23
+
+* **Creation**: Added [OpenBaoSnapshotStale — CronJob freshly created during cluster provisioning, never run; KMS Alias IAM AccessDenied…](incidents/openbaosnapshotstale-cronjob-freshly-created-during-cluster-provisioning-never-run-kms-alias-iam-accessdenied-3eac2be9.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
