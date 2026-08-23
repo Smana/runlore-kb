@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-08-23
+
+* **Creation**: Added [Harbor HelmRelease InstallFailed: Cilium IPAM exhaustion on node ip-10-0-4-135 blocks 3 Deployments; CNPG database…](incidents/harbor-helmrelease-installfailed-cilium-ipam-exhaustion-on-node-ip-10-0-4-135-blocks-3-deployments-cnpg-database-d6c69909.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
