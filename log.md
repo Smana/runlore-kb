@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-08-23
+
+* **Creation**: Added [HelmRelease security/zitadel InstallFailed — zitadel-init Job timed out (DeadlineExceeded) waiting for CNPG…](incidents/helmrelease-security-zitadel-installfailed-zitadel-init-job-timed-out-deadlineexceeded-waiting-for-cnpg-2f6c83e8.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
