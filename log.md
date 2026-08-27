@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-08-27
+
+* **Creation**: Added [OpenBaoSnapshotStale — snapshot CronJob never created because its Flux Kustomization is suspended (spec.suspend:…](incidents/openbaosnapshotstale-snapshot-cronjob-never-created-because-its-flux-kustomization-is-suspended-spec-suspend-07a72cdc.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
