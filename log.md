@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-08-28
+
+* **Creation**: Added [CNPG scheduled backup stuck — barman-cloud plugin 403 on GCS bucket (insufficient storage.buckets.get permission)](incidents/cnpg-scheduled-backup-stuck-barman-cloud-plugin-403-on-gcs-bucket-insufficient-storage-buckets-get-permission-76784561.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
