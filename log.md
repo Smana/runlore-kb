@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-09-08
+
+* **Creation**: Added [Kustomization/security-openbao ArtifactFailed — pre-existing recurring source-controller PVC Multi-Attach during…](incidents/kustomization-security-openbao-artifactfailed-pre-existing-recurring-source-controller-pvc-multi-attach-during-3fde5d17.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
