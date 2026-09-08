@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-09-08
+
+* **Creation**: Added [\[Pre-existing/recurrent\] karpenter-nodepools ArtifactFailed — EKS nodegroup rotation evicted source-controller…](incidents/pre-existing-recurrent-karpenter-nodepools-artifactfailed-eks-nodegroup-rotation-evicted-source-controller-07c8594e.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
