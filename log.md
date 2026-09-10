@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-09-10
+
+* **Creation**: Added [crossplane-configuration-aws v0.6.2 requires crossplane-configuration-core >=v0.6.1, but only v0.6.0 is installed…](incidents/crossplane-configuration-aws-v0-6-2-requires-crossplane-configuration-core-v0-6-1-but-only-v0-6-0-is-installed-072ab96d.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
