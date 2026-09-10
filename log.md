@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-09-10
+
+* **Creation**: Added [flux-notifications ReconciliationFailed — external-secrets-webhook had no endpoints during Cilium IPAM exhaustion…](incidents/flux-notifications-reconciliationfailed-external-secrets-webhook-had-no-endpoints-during-cilium-ipam-exhaustion-78726a78.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
