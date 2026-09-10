@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-09-10
+
+* **Creation**: Added [Kustomization/apps ReconciliationFailed: App manifests add `.spec.externalSecrets\[\].store` field not declared in the…](incidents/kustomization-apps-reconciliationfailed-app-manifests-add-spec-externalsecrets-store-field-not-declared-in-the-e5ca286b.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
