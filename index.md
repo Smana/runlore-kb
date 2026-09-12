@@ -26,6 +26,7 @@ conveyed by the surrounding prose.
 - [LLMPlatformSemanticRouterDown on an LLM-free cluster — the opt-in LLM platform is suspended](llm-semantic-router-down-platform-suspended.md)
 - [Crossplane KMS Alias stuck Synced=False — kms:CreateAlias denied by an unsatisfiable aws:RequestTag condition](crossplane-kms-createalias-requesttag-accessdenied.md)
 - [Pod crashloops with AWS "Access Denied" but the pod spec has no AWS_CONTAINER_* env — Pod Identity was never injected](eks-pod-identity-credentials-never-injected.md) — the pod was admitted before its PodIdentityAssociation was usable, so the webhook injected nothing; injection happens at admission, so no restart recovers it. Recreate the pod. Recurs on every cluster rebuild.
+- [OpenBaoRaftQuorumAtRisk (pre-existing) — false positive: 5-node alert thresholds still applied to single-node dev…](playbooks/openbaoraftquorumatrisk-pre-existing-false-positive-5-node-alert-thresholds-still-applied-to-single-node-dev-3d8abc14.md) — Alert rules with 5-node-cluster thresholds (failure_tolerance < 1 for QuorumAtRisk, < 2 for NodeLost) are applied to a freshly-provisioned single-node dev OpenBao cluster, where failure_tolerance is permanently 0 by design — not a real quorum loss. This is the same pre-existing fault as the previous occurrence (8h54m ago); it was not fixed.
 
 ## Incidents
 
