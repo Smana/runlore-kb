@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-09-13
+
+* **Creation**: Added [\[PRE-EXISTING\] OpenBao nightly snapshot fails: GCS upload denied because Crossplane BucketIAMMember cannot apply…](incidents/pre-existing-openbao-nightly-snapshot-fails-gcs-upload-denied-because-crossplane-bucketiammember-cannot-apply-9e231075.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
