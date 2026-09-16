@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-09-16
+
+* **Creation**: Added [OpenBaoRaftQuorumAtRisk — PRE-EXISTING false positive (occurrence #2): FT=0 is the mathematical norm for this…](incidents/openbaoraftquorumatrisk-pre-existing-false-positive-occurrence-2-ft-0-is-the-mathematical-norm-for-this-7ad9b54f.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
