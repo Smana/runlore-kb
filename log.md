@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-09-26
+
+* **Creation**: Added [Kustomization/zitadel ReconciliationFailed — cert-manager-webhook had no endpoints during spot node termination…](incidents/kustomization-zitadel-reconciliationfailed-cert-manager-webhook-had-no-endpoints-during-spot-node-termination-a63d8db4.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
