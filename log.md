@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-09-26
+
+* **Creation**: Added [HelmRelease envoy-ai-gateway UpgradeFailed — ExternalSecret Password-generator churn on valuesFrom Secret cancels…](incidents/helmrelease-envoy-ai-gateway-upgradefailed-externalsecret-password-generator-churn-on-valuesfrom-secret-cancels-1afdde4f.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
