@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-09-27
+
+* **Creation**: Added [security-public-certs ReconciliationFailed — transient spot-termination capacity crisis took down…](incidents/security-public-certs-reconciliationfailed-transient-spot-termination-capacity-crisis-took-down-634f9a7d.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
