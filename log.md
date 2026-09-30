@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-09-30
+
+* **Creation**: Added [room-broker Kustomization ReconciliationFailed: SQLInstance manifest sets .spec.credentials not declared in CRD schema](incidents/room-broker-kustomization-reconciliationfailed-sqlinstance-manifest-sets-spec-credentials-not-declared-in-crd-schema-af8d7555.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
