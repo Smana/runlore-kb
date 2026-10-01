@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-10-01
+
+* **Creation**: Added [rooms-oauth2-proxy HelmRelease InstallFailed — missing Vault secret `agents/rooms-proxy` blocks pod start](incidents/rooms-oauth2-proxy-helmrelease-installfailed-missing-vault-secret-agents-rooms-proxy-blocks-pod-start-519c5302.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
