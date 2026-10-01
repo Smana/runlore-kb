@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-10-01
+
+* **Creation**: Added [Kustomization/infrastructure ReconciliationFailed: ComputeClass taint key with reserved `kubernetes.io` substring…](incidents/kustomization-infrastructure-reconciliationfailed-computeclass-taint-key-with-reserved-kubernetes-io-substring-0a8706dd.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
