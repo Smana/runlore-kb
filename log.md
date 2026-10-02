@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-10-02
+
+* **Creation**: Added [OpenBao dev raft cluster — pre-existing single-node topology (occurrence #4, same fault still present)](incidents/openbao-dev-raft-cluster-pre-existing-single-node-topology-occurrence-4-same-fault-still-present-081a452f.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
