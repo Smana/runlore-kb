@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-10-08
+
+* **Creation**: Added [Kustomization/tooling ReconciliationFailed — transient node disruption evicted single-replica…](incidents/kustomization-tooling-reconciliationfailed-transient-node-disruption-evicted-single-replica-a96e7505.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
