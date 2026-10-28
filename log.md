@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-10-28
+
+* **Creation**: Added [\[PRE-EXISTING\] HelmRelease victoria-metrics-k8s-stack terminal-failed (Stalled/RetriesExceeded) after interrupted…](incidents/pre-existing-helmrelease-victoria-metrics-k8s-stack-terminal-failed-stalled-retriesexceeded-after-interrupted-2d41ed47.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
