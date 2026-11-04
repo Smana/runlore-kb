@@ -1,0 +1,66 @@
+# The merge policy. policy-bot reads it from main, never from the PR it evaluates. A gate path
+# itself: a RunLore entry PR can never change it. When every rule skips, policy-bot posts
+# `error`, so an unknown author, or a bot's PR that is not an entry, cannot merge.
+policy:
+  approval:
+    - or:
+        - human-authored
+        - "low-risk: kb-entries"
+        - approved by a maintainer
+
+approval_defaults:
+  options:
+    invalidate_on_push: true      # a push after approval re-opens the gate
+    ignore_edited_comments: true
+    methods:
+      comments: []
+      github_review: true         # only a GitHub review from a listed human approves
+
+approval_rules:
+  # The owner's own PRs, gate paths included (the fence file and this one change in human-authored PRs).
+  - name: human-authored
+    if:
+      has_author_in:
+        users: [Smana]
+
+  # RunLore's entry PR (RK3): one entry added, the index and the log modified, nothing else, from
+  # RunLore's branch, labelled for the merge gate. The checks are part of the rule: the validator
+  # and the leak scan both succeeded.
+  - name: "low-risk: kb-entries"  # shadow until its 20 decisions (K8); the rule is what lets one reach "would merge"
+    if:
+      has_author_in:
+        users: ["runlore[bot]"]
+      only_has_contributors_in:
+        users: ["runlore[bot]"]
+      from_branch:
+        pattern: '^runlore/kb-'
+      has_labels:
+        - ready-to-merge
+      changed_files:
+        paths: ['^incidents/[^/]+\.md$']
+      only_changed_files:
+        paths:
+          - '^incidents/[^/]+\.md$'
+          - '^index\.md$'
+          - '^log\.md$'
+      no_changed_files:
+        paths:
+          - '^\.policy\.yml$'
+          - '^\.github/'
+      file_not_deleted:
+        paths: ['.*']
+      file_not_added:
+        paths: ['^(index|log)\.md$']
+      has_workflow_result:
+        conclusions: ["success"]
+        workflows:
+          - ".github/workflows/validate-kb.yml"
+          - ".github/workflows/leak-scan.yml"
+
+  # Every other PR, a bot's included: the maintainer's approval.
+  - name: approved by a maintainer
+    requires:
+      count: 1
+      users: [Smana]
+    options:
+      allow_non_author_contributor: true
