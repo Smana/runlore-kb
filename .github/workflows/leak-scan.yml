@@ -1,0 +1,32 @@
+name: Leak scan
+
+# Scans what a pull request adds for a live credential. A job of its own, never a step of
+# `validate`: the agent factory's merge gate reads this check run by its name, so a red
+# `validate` means an invalid entry and a red `leak-scan` means a credential. The catalog is
+# public text, so this is the second line after RunLore's redaction at each tool output.
+#
+# `pull_request`, never `pull_request_target`: the scan runs the PR's own tree with a read-only
+# token and no secret, as the other repositories' scan does (cloud-native-ref's ci.yaml).
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  leak-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          # Both ends of the scanned range must be in the clone.
+          fetch-depth: 0
+          persist-credentials: false
+      # The range is the pull request's: its base commit to the merge commit it is checked as.
+      - name: Detect secrets with TruffleHog
+        uses: trufflesecurity/trufflehog@31ce31ee1abbcc7dc8eee5764c17121c3044c8b2 # v3.99.7
+        with:
+          path: ./
+          base: ${{ github.event.pull_request.base.sha }}
+          head: ${{ github.sha }}
+          extra_args: --debug --only-verified
