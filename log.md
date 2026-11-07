@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-11-07
+
+* **Creation**: Added [MetricsServerUnavailable fires on a typo: VMRule runlore-kb-seed queries deployment="metrics-servr" (missing 'e'),…](incidents/metricsserverunavailable-fires-on-a-typo-vmrule-runlore-kb-seed-queries-deployment-metrics-servr-missing-e-5707f78e.md).
+
 ## 2026-08-20
 
 * **Creation**: Added [\[PRE-EXISTING #2\] CheckoutUiUnavailable: CiliumNetworkPolicy still denies checkout-ui→orders-api traffic, failing…](incidents/pre-existing-2-checkoutuiunavailable-ciliumnetworkpolicy-still-denies-checkout-ui-orders-api-traffic-failing-81fe6337.md).
