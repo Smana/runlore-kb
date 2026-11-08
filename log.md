@@ -9,6 +9,8 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 ## 2026-11-08
 
+* **Creation**: Added [AppWizardUnavailable](incidents/appwizardunavailable-5f91671c.md).
+
 * **Creation**: Added [PodinfoNoAvailableReplica alert is a false positive — rule expression has a typo (deployment="podnfo" instead of…](incidents/podinfonoavailablereplica-alert-is-a-false-positive-rule-expression-has-a-typo-deployment-podnfo-instead-of-a3863358.md).
 
 ## 2026-11-07
