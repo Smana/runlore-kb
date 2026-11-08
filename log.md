@@ -9,6 +9,8 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 ## 2026-11-08
 
+* **Creation**: Added [crossplane-configuration-aws v0.6.2 requires crossplane-configuration-core >=v0.6.1, but only v0.6.0 is installed…](incidents/crossplane-configuration-aws-v0-6-2-requires-crossplane-configuration-core-v0-6-1-but-only-v0-6-0-is-installed-072ab96d.md).
+
 * **Creation**: Added [\[Pre-existing/recurrent\] karpenter-nodepools ArtifactFailed — EKS nodegroup rotation evicted source-controller…](incidents/pre-existing-recurrent-karpenter-nodepools-artifactfailed-eks-nodegroup-rotation-evicted-source-controller-07c8594e.md).
 
 * **Creation**: Added [HelmRelease/metrics-server UninstallFailed — GKE addon manager and Flux fighting over the same metrics-server…](incidents/helmrelease-metrics-server-uninstallfailed-gke-addon-manager-and-flux-fighting-over-the-same-metrics-server-93441a42.md).
