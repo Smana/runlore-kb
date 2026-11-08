@@ -9,6 +9,8 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 ## 2026-11-08
 
+* **Creation**: Added [Kustomization/infrastructure ReconciliationFailed: ComputeClass taint key with reserved `kubernetes.io` substring…](incidents/kustomization-infrastructure-reconciliationfailed-computeclass-taint-key-with-reserved-kubernetes-io-substring-0a8706dd.md).
+
 * **Creation**: Added [HelmRelease envoy-ai-gateway UpgradeFailed — ExternalSecret Password-generator churn on valuesFrom Secret cancels…](incidents/helmrelease-envoy-ai-gateway-upgradefailed-externalsecret-password-generator-churn-on-valuesfrom-secret-cancels-1afdde4f.md).
 
 * **Creation**: Added [crossplane-configuration-aws v0.6.2 requires crossplane-configuration-core >=v0.6.1, but only v0.6.0 is installed…](incidents/crossplane-configuration-aws-v0-6-2-requires-crossplane-configuration-core-v0-6-1-but-only-v0-6-0-is-installed-072ab96d.md).
