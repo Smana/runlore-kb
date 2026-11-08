@@ -13,6 +13,11 @@ fingerprint: 95ddf70dc8e812d9d2fec5633b9df696a9b9322e4705196e832612d7c413f468
 confidence: 0.85
 provenance:
     - Alert rule in /etc/vmalert/rules-out/rules-src-0/rules.yaml, group=app-wizard, alertname=AppWizardNoAvailableReplica
+resolution:
+    fix_pr: https://github.com/Smana/cloud-native-ref/pull/2659
+    merge_sha: 4230652db3b4fba1339b666261d0233d1076817f
+    verdict: resolved
+    verified_at: "2026-11-08T09:57:38Z"
 ---
 
 ## Decision
@@ -43,6 +48,12 @@ Affected resource: PrometheusRule observability/AppWizardNoAvailableReplica
 1. **The alert rule AppWizardNoAvailableReplica in the vmalert rules file (/etc/vmalert/rules-out/rules-src-0/rules.yaml) has a typo in its PromQL expression: it filters on deployment="app-wizzard" (TWO z's) instead of the correct deployment="app-wizard" (ONE z). Because no Deployment named "app-wizzard" exists, the selector kube_deployment_status_replicas_available{namespace="apps", deployment="app-wizzard"} matches no series. The absent(... > 0) wrapper then always returns 1 (vector present = alert firing), so the alert fires permanently regardless of the actual deployment health. The real Deployment apps/app-wizard is fully healthy with availableReplicas=1, readyReplicas=1, and its pod app-wizard-979c7dcfd-v4nj4 is Running ready=6/6.** (85%) — change: Alert rule in /etc/vmalert/rules-out/rules-src-0/rules.yaml, group=app-wizard, alertname=AppWizardNoAvailableReplica
 
 ## Resolution
+
+- **Applied:** [#2659](https://github.com/Smana/cloud-native-ref/pull/2659)
+
+<!-- runlore-resolution:71ee5db0 -->
+
+### Suggested by the investigation
 
 - Fix the typo in the alerting rule expression: change deployment="app-wizzard" to deployment="app-wizard" in the PrometheusRule/VMRule that defines the AppWizardNoAvailableReplica alert. The rule is loaded by the observability-victoria-metrics-k8s-stack Kustomization (sourceRef: ExternalArtifact flux-system/observability-artifact) and served at /etc/vmalert/rules-out/rules-src-0/rules.yaml. After fixing, the absent() expression will correctly evaluate against the real app-wizard deployment metric and the alert will stop firing. (reversible=false)
 
