@@ -9,6 +9,8 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 ## 2026-11-08
 
+* **Creation**: Added [AgentFleetTokenSpendHigh — runaway agent run xplane-run-mb6bstvz burning 6.36M input tokens in retry loop](incidents/agentfleettokenspendhigh-runaway-agent-run-xplane-run-mb6bstvz-burning-6-36m-input-tokens-in-retry-loop-9d0dee6c.md).
+
 * **Creation**: Added [Kustomization/infrastructure ReconciliationFailed: ComputeClass taint key with reserved `kubernetes.io` substring…](incidents/kustomization-infrastructure-reconciliationfailed-computeclass-taint-key-with-reserved-kubernetes-io-substring-0a8706dd.md).
 
 * **Creation**: Added [HelmRelease envoy-ai-gateway UpgradeFailed — ExternalSecret Password-generator churn on valuesFrom Secret cancels…](incidents/helmrelease-envoy-ai-gateway-upgradefailed-externalsecret-password-generator-churn-on-valuesfrom-secret-cancels-1afdde4f.md).
