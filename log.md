@@ -9,6 +9,8 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 ## 2026-11-08
 
+* **Creation**: Added [Kustomization/zitadel HealthCheckFailed — CNPG cluster recovery blocked by non-empty S3 WAL archive (barman…](incidents/kustomization-zitadel-healthcheckfailed-cnpg-cluster-recovery-blocked-by-non-empty-s3-wal-archive-barman-5d199d5e.md).
+
 * **Creation**: Added [AppWizardUnavailable](incidents/appwizardunavailable-5f91671c.md).
 
 * **Creation**: Added [PodinfoNoAvailableReplica alert is a false positive — rule expression has a typo (deployment="podnfo" instead of…](incidents/podinfonoavailablereplica-alert-is-a-false-positive-rule-expression-has-a-typo-deployment-podnfo-instead-of-a3863358.md).
