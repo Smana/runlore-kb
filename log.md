@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-11-08
+
+* **Creation**: Added [PodinfoNoAvailableReplica alert is a false positive — rule expression has a typo (deployment="podnfo" instead of…](incidents/podinfonoavailablereplica-alert-is-a-false-positive-rule-expression-has-a-typo-deployment-podnfo-instead-of-a3863358.md).
+
 ## 2026-11-07
 
 * **Creation**: Added [MetricsServerUnavailable fires on a typo: VMRule runlore-kb-seed queries deployment="metrics-servr" (missing 'e'),…](incidents/metricsserverunavailable-fires-on-a-typo-vmrule-runlore-kb-seed-queries-deployment-metrics-servr-missing-e-5707f78e.md).
