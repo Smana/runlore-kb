@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-11-17
+
+* **Creation**: Added [rooms-oauth2-proxy HelmRelease InstallFailed: pod crash-loops on DNS NXDOMAIN for OIDC issuer auth.cloud.ogenki.io](incidents/rooms-oauth2-proxy-helmrelease-installfailed-pod-crash-loops-on-dns-nxdomain-for-oidc-issuer-auth-cloud-ogenki-io-78f2eabd.md).
+
 ## 2026-11-08
 
 * **Creation**: Added [AgentFleetTokenSpendHigh — runaway agent run xplane-run-mb6bstvz burning 6.36M input tokens in retry loop](incidents/agentfleettokenspendhigh-runaway-agent-run-xplane-run-mb6bstvz-burning-6-36m-input-tokens-in-retry-loop-9d0dee6c.md).
