@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-11-17
+
+* **Creation**: Added [HelmRelease/agent-factory UpgradeFailed: values change set image.tag to digest-pinned format rejected by chart template](incidents/helmrelease-agent-factory-upgradefailed-values-change-set-image-tag-to-digest-pinned-format-rejected-by-chart-template-438e9f8c.md).
+
 ## 2026-11-08
 
 * **Creation**: Added [AgentFleetTokenSpendHigh — runaway agent run xplane-run-mb6bstvz burning 6.36M input tokens in retry loop](incidents/agentfleettokenspendhigh-runaway-agent-run-xplane-run-mb6bstvz-burning-6-36m-input-tokens-in-retry-loop-9d0dee6c.md).
