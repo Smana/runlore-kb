@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-11-18
+
+* **Creation**: Added [Kustomization/envoy-gateway ReconciliationFailed — external-secrets-webhook pod evicted during Karpenter spot node…](incidents/kustomization-envoy-gateway-reconciliationfailed-external-secrets-webhook-pod-evicted-during-karpenter-spot-node-f609bf2a.md).
+
 ## 2026-11-08
 
 * **Creation**: Added [AgentFleetTokenSpendHigh — runaway agent run xplane-run-mb6bstvz burning 6.36M input tokens in retry loop](incidents/agentfleettokenspendhigh-runaway-agent-run-xplane-run-mb6bstvz-burning-6-36m-input-tokens-in-retry-loop-9d0dee6c.md).
