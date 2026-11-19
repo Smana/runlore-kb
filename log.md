@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-11-19
+
+* **Creation**: Added [cert-manager-webhook single-replica (no PDB) caused transient ReconciliationFailed during Karpenter spot eviction](incidents/cert-manager-webhook-single-replica-no-pdb-caused-transient-reconciliationfailed-during-karpenter-spot-eviction-0d28f87c.md).
+
 ## 2026-11-08
 
 * **Creation**: Added [AgentFleetTokenSpendHigh — runaway agent run xplane-run-mb6bstvz burning 6.36M input tokens in retry loop](incidents/agentfleettokenspendhigh-runaway-agent-run-xplane-run-mb6bstvz-burning-6-36m-input-tokens-in-retry-loop-9d0dee6c.md).
