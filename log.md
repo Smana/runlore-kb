@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-11-09
+
+* **Creation**: Added [Kustomization/agent-runtime ArtifactFailed — source-controller PVC Multi-Attach during node rotation (self-healed,…](incidents/kustomization-agent-runtime-artifactfailed-source-controller-pvc-multi-attach-during-node-rotation-self-healed-858a902b.md).
+
 ## 2026-11-08
 
 * **Creation**: Added [AgentFleetTokenSpendHigh — runaway agent run xplane-run-mb6bstvz burning 6.36M input tokens in retry loop](incidents/agentfleettokenspendhigh-runaway-agent-run-xplane-run-mb6bstvz-burning-6-36m-input-tokens-in-retry-loop-9d0dee6c.md).
