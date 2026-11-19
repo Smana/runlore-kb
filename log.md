@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-11-17
+
+* **Creation**: Added [HelmRelease/agent-factory HealthCheckCanceled: pods couldn't find servable config → install timeouts → ConfigMap…](incidents/helmrelease-agent-factory-healthcheckcanceled-pods-couldn-t-find-servable-config-install-timeouts-configmap-4865b90a.md).
+
 ## 2026-11-08
 
 * **Creation**: Added [AgentFleetTokenSpendHigh — runaway agent run xplane-run-mb6bstvz burning 6.36M input tokens in retry loop](incidents/agentfleettokenspendhigh-runaway-agent-run-xplane-run-mb6bstvz-burning-6-36m-input-tokens-in-retry-loop-9d0dee6c.md).
