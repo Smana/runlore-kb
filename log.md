@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-11-17
+
+* **Creation**: Added [Kustomization/agent-factory HealthCheckFailed (occurrence #3, pre-existing) — HelmRelease agent-factory still…](incidents/kustomization-agent-factory-healthcheckfailed-occurrence-3-pre-existing-helmrelease-agent-factory-still-0e9430b8.md).
+
 ## 2026-11-08
 
 * **Creation**: Added [AgentFleetTokenSpendHigh — runaway agent run xplane-run-mb6bstvz burning 6.36M input tokens in retry loop](incidents/agentfleettokenspendhigh-runaway-agent-run-xplane-run-mb6bstvz-burning-6-36m-input-tokens-in-retry-loop-9d0dee6c.md).
