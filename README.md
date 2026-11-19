@@ -22,7 +22,7 @@ investigations, and **writes** to (via reviewed PRs) as it learns.
 
 ```yaml
 ---
-type: Playbook              # Playbook | Incident | Postmortem | …
+type: Playbook              # Playbook | Incident | Concept
 title: HelmRelease upgrade failure
 description: A Helm chart bump leaves the release Ready=False.
 resource: helmrelease://*   # REQUIRED for Incident (namespace/name or scheme://…); optional for Playbook/Concept
