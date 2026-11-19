@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-11-19
+
+* **Creation**: Added [\[Pre-existing, occurrence #5\] Kustomization/zitadel ReconciliationFailed — cert-manager-webhook single-replica…](incidents/pre-existing-occurrence-5-kustomization-zitadel-reconciliationfailed-cert-manager-webhook-single-replica-cde03d42.md).
+
 ## 2026-11-08
 
 * **Creation**: Added [AgentFleetTokenSpendHigh — runaway agent run xplane-run-mb6bstvz burning 6.36M input tokens in retry loop](incidents/agentfleettokenspendhigh-runaway-agent-run-xplane-run-mb6bstvz-burning-6-36m-input-tokens-in-retry-loop-9d0dee6c.md).
