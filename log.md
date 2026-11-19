@@ -7,6 +7,10 @@ description: Chronological record of catalog changes (one line per ingest/curati
 
 # Change log
 
+## 2026-11-19
+
+* **Creation**: Added [\[Pre-existing\] Kustomization/merge-gate-secrets ReconciliationFailed — external-secrets-webhook (single replica)…](incidents/pre-existing-kustomization-merge-gate-secrets-reconciliationfailed-external-secrets-webhook-single-replica-72bd27d2.md).
+
 ## 2026-11-08
 
 * **Creation**: Added [AgentFleetTokenSpendHigh — runaway agent run xplane-run-mb6bstvz burning 6.36M input tokens in retry loop](incidents/agentfleettokenspendhigh-runaway-agent-run-xplane-run-mb6bstvz-burning-6-36m-input-tokens-in-retry-loop-9d0dee6c.md).
